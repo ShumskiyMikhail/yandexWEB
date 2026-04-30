@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, flash, request, session, jsonify
+from flask import Flask, render_template, redirect, url_for, flash, session, jsonify
 from flask_login import login_user, logout_user, login_required, current_user
 from datetime import datetime, date, timedelta
 from functools import wraps
@@ -9,7 +9,6 @@ import logging
 from logging.handlers import RotatingFileHandler
 from markupsafe import escape
 
-import requests
 from flask import request, jsonify
 
 from models import db, login_manager, User, Meal, Order, Allergy, Feedback, Inventory, \

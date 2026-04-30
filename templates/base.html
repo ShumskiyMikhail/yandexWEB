@@ -33,6 +33,16 @@
             }
         }
 
+        /* Кнопка карты в навбаре */
+        .map-nav-btn {
+            margin-right: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .map-nav-btn:hover {
+            transform: scale(1.05);
+        }
+
         /* Убираем стандартный контейнер flash-уведомлений */
         .container-fluid .alert {
             display: none;
@@ -48,6 +58,11 @@
 
             <div class="navbar-nav ms-auto">
                 {% if current_user.is_authenticated %}
+                <!-- Кнопка карты -->
+                <a href="{{ url_for('show_map') }}" class="nav-link map-nav-btn" title="Посмотреть карту столовых">
+                    <i class="bi bi-map"></i> Карта
+                </a>
+
                 <div class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                         <i class="bi bi-person-circle"></i> {{ current_user.username }}
